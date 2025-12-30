@@ -36,7 +36,7 @@ for name, value in pairs(overrides) do
 	end
 end
 
-if settings.startup["pelagos-fluid-value-based-flamethrower"].value then
+if settings.startup["fluid-value-based-flamethrower"].value then
 	local flameturret = data.raw["fluid-turret"]["flamethrower-turret"]
 
 	for fluid_name, fuel_value in pairs(overrides) do
