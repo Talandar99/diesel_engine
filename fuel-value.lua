@@ -23,6 +23,8 @@ local overrides = {
 	["uranium-sludge"] = "0.15MJ",
 	-- Spoilded trenches of fulgora
 	["holmium-sludge"] = "0.15MJ",
+	-- On Wayward Seas
+	["gleba-resin"] = "0.45MJ",
 	-------------------------------------------------------
 }
 

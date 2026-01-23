@@ -1,9 +1,14 @@
 {
     "name": "diesel_engine",
-    "version": "0.2.0",
+    "version": "0.4.0",
     "title": "Diesel Engine",
     "author": "Talandar",
-    "dependencies": [],
+    "dependencies": [
+        "(?) maraxsis",
+        "(?) Krastorio2-spaced-out",
+        "(?) PlanetsLib",
+        "(?) planet-muluna"
+    ],
     "description": "Internal library responsible for making liquid fuel powered machines work",
     "factorio_version": "2.0"
 }

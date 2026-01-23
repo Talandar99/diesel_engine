@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2026-01-18
+  Changes:
+    - if muluna is installed surface conditions on machines that burns fluid are removed
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2026-01-04
+  Changes:
+    - if installed with maraxis, diesel submarine numbers are now changed to work properly with all 
+      machines that use diesel_engine
+    - added support for On Wayward Seas resin !
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2025-12-30
   Changes:
