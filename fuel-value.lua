@@ -25,6 +25,8 @@ local overrides = {
 	["holmium-sludge"] = "0.15MJ",
 	-- On Wayward Seas
 	["gleba-resin"] = "0.45MJ",
+	-- rocket fuel is fluid
+	["rocket-fuel"] = "1.3MJ",
 	-------------------------------------------------------
 }
 
