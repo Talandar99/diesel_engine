@@ -29,6 +29,8 @@ local overrides = {
 	["rocket-fuel"] = "1.3MJ",
 	-- apia-carnova
 	["glycerin"] = "0.25MJ",
+	-- ferros + hydraulic machines
+	["lubricant"] = "0.10MJ",
 	-------------------------------------------------------
 }
 
