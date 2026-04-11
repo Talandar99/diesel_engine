@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.0
+Date: 2026-04-11
+  Changes:
+    - added support for fluids added in new version of hydraulic machines: 
+      gasoline, naphtha and residual-oil
+    - added support for pollution multiplier. Fluid burners will now generate different 
+      amount of pollution based on used fuel. Ethanol is the best one while crude oil is the worst.
+      Values can be read in factoriopedia while inspecting fluid.
+---------------------------------------------------------------------------------------------------
 Version: 0.6.0
 Date: 2026-03-22
   Changes:
