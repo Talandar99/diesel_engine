@@ -1,3 +1,6 @@
+if mods["space-age"] then
+	require("space-variants")
+end
 require("fuel-value")
 require("barrel-fuel")
 

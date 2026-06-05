@@ -104,6 +104,10 @@ local overrides = {
 		emissions_multiplier = 1,
 	},
 	-------------------------------------------------------
+	["space-diesel-fuel"] = {
+		fuel_value = "1.0MJ",
+		emissions_multiplier = 1,
+	},
 }
 
 for name, values in pairs(overrides) do
@@ -146,6 +150,100 @@ if settings.startup["fluid-value-based-flamethrower"].value then
 					table.insert(flameturret.attack_parameters.fluids, {
 						type = fluid_name,
 						damage_modifier = number_part,
+					})
+				end
+			end
+		end
+	end
+end
+if mods["space-age"] then
+	local space_diesel = data.raw.fluid["space-diesel-fuel"]
+	if space_diesel then
+		local has_space_variant = false
+		local check_types = { "assembling-machine", "inserter", "furnace", "mining-drill" }
+
+		for _, prototype_type in ipairs(check_types) do
+			if data.raw[prototype_type] then
+				for entity_name, _ in pairs(data.raw[prototype_type]) do
+					if string.find(entity_name, "%-space%-variant$") then
+						has_space_variant = true
+						break
+					end
+				end
+			end
+			if has_space_variant then
+				break
+			end
+		end
+
+		if has_space_variant then
+			local created_recipes = {}
+
+			for name, values in pairs(overrides) do
+				local input_fluid = data.raw.fluid[name]
+
+				if name ~= "space-diesel-fuel" and input_fluid and values.fuel_value then
+					local input_energy = util.parse_energy(values.fuel_value)
+					local target_diesel_energy = util.parse_energy(space_diesel.fuel_value)
+
+					if input_energy and input_energy > 0 and target_diesel_energy > 0 then
+						local output_amount = (100 * input_energy) / target_diesel_energy
+						local recipe_name = "space-diesel-from-" .. name
+
+						local recipe_icons = {
+							{
+								icon = space_diesel.icon,
+								icon_size = space_diesel.icon_size or 64,
+							},
+							{
+								icon = input_fluid.icon,
+								icon_size = input_fluid.icon_size or 64,
+								scale = 0.25,
+								shift = { 8, 8 },
+							},
+						}
+
+						local localized_name = {
+							"recipe-name.space-diesel-from-fluid",
+							input_fluid.localised_name or { "fluid-name." .. name },
+						}
+
+						data:extend({
+							{
+								type = "recipe",
+								name = recipe_name,
+								energy_required = 10,
+								enabled = false,
+								category = "organic-or-chemistry",
+								localised_name = localized_name,
+								icons = recipe_icons,
+								ingredients = {
+									{ type = "fluid", name = name, amount = 100 },
+								},
+								results = {
+									{ type = "fluid", name = "space-diesel-fuel", amount = output_amount },
+								},
+								surface_conditions = {
+									{
+										property = "pressure",
+										min = 1,
+									},
+								},
+								subgroup = "space-diesel-fuel",
+								order = "b[fluid-chemistry]-z-" .. name,
+							},
+						})
+						table.insert(created_recipes, recipe_name)
+					end
+				end
+			end
+			local space_tech = data.raw.technology["space-platform"]
+			if space_tech and #created_recipes > 0 then
+				space_tech.effects = space_tech.effects or {}
+				for _, r_name in ipairs(created_recipes) do
+					table.insert(space_tech.effects, {
+						type = "unlock-recipe",
+						recipe = r_name,
 					})
 				end
 			end
