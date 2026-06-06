@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.0
+Date: 2026-06-06
+  Changes:
+    - added support for space diesel and diesel machines in space
+    - decomposer support: added organic sludge as valid diesel fuel
+    - foliax support: added foliax energy fluid, brimfruit paste and research
+      catalyst as valid diesel fuel
+---------------------------------------------------------------------------------------------------
 Version: 0.7.0
 Date: 2026-04-11
   Changes:

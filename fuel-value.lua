@@ -103,6 +103,24 @@ local overrides = {
 		fuel_value = "2.0MJ",
 		emissions_multiplier = 1,
 	},
+	-- decomposer
+	["organic-sludge"] = {
+		fuel_value = "0.25MJ",
+		emissions_multiplier = 3.0,
+	},
+	-- foliax
+	["energy-fluid"] = {
+		fuel_value = "0.75MJ",
+		emissions_multiplier = 0.8,
+	},
+	["brimfruit-paste"] = {
+		fuel_value = "0.6MJ",
+		emissions_multiplier = 1.8,
+	},
+	["foliax-research-catalyst"] = {
+		fuel_value = "0.25MJ",
+		emissions_multiplier = 2.0,
+	},
 	-------------------------------------------------------
 	["space-diesel-fuel"] = {
 		fuel_value = "1.0MJ",

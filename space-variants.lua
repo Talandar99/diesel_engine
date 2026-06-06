@@ -16,6 +16,11 @@ local function make_space_fluid_variant(entity)
 	space_entity.name = new_name
 	space_entity.placeable_by = { item = entity.name, count = 1 }
 
+	space_entity.localised_name = {
+		"entity-name.space-diesel-variant",
+		entity.localised_name or { "entity-name." .. entity.name },
+	}
+
 	if space_entity.minable then
 		space_entity.minable.result = entity.name
 	end
