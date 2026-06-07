@@ -4,7 +4,7 @@ Date: 2026-06-07
   Changes:
     - added oxygen
     - added inefficient electrolysis (which is present only if you can craft space diesel)
-    - fixed diesel fuel color
+    - updated diesel fuel color
     - diesel fuel is now moved into separate research
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
