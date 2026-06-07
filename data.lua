@@ -87,7 +87,7 @@ if mods["space-age"] then
 		{
 			type = "technology",
 			name = "space-diesel",
-			icon_size = 256,
+			icon_size = 128,
 			icon = "__diesel_engine__/graphics/space-diesel-fuel-tech.png",
 			effects = {
 				{ type = "unlock-recipe", recipe = "inefficient-electrolysis" },

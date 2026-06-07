@@ -30,7 +30,7 @@ local function make_space_fluid_variant(entity)
 			space_entity.energy_source.fluid_box.filter = "space-diesel-fuel"
 		end
 	end
-
+	space_entity.hidden_in_factoriopedia = true
 	data:extend({ space_entity })
 end
 
