@@ -198,7 +198,7 @@ if mods["space-age"] then
 								name = recipe_name,
 								energy_required = 10,
 								enabled = false,
-								category = "organic-or-chemistry",
+								categories = { "organic", "chemistry" },
 								localised_name = {
 									"recipe-name.space-diesel-from-fluid",
 									data.raw.fluid[name].localised_name or { "fluid-name." .. name },

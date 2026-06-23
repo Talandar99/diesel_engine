@@ -69,7 +69,7 @@ if mods["space-age"] then
 		{
 			type = "recipe",
 			name = "inefficient-electrolysis",
-			category = "chemistry",
+			categories = { "chemistry" },
 			enabled = false,
 			energy_required = 10,
 			ingredients = { { type = "fluid", name = "water", amount = 100 } },

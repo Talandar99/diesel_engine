@@ -1,7 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.10.0
+Date: 2026-06-23
+  Changelog:
+    - diesel engine is now working with factorio 2.1
+    - space diesel machine variants are now hidden
+    - fixed Changelog so it displays properly from within the game
+---------------------------------------------------------------------------------------------------
 Version: 0.9.1
 Date: 2026-06-07
-    Bugfixes:
+  Bugfixes:
     - fixed image size for space diesel tech
     - space diesel machine variants are now hidden
 ---------------------------------------------------------------------------------------------------
