@@ -166,8 +166,36 @@ if settings.startup["fluid-value-based-flamethrower"].value and data.raw["fluid-
 end
 
 if mods["space-age"] then
+	-------------------------------------------------------------------------------
+	local oxygen_name = "oxygen"
+	if mods["Krastorio2"] then
+		oxygen_name = "kr-oxygen"
+	end
+	data.raw.recipe["inefficient-electrolysis"].results = { { type = "fluid", name = oxygen_name, amount = 20 } }
+	-------------------------------------------------------------------------------
+	--redefine oxygen to override other icons because it looks cool
+	if settings.startup["override-oxygen-with-diesel-engine-icon"].value then
+		data:extend({
+			{
+				type = "fluid",
+				name = oxygen_name,
+				subgroup = "fluid",
+				default_temperature = 25,
+				base_color = { r = 0.28, g = 0.68, b = 0.73 },
+				flow_color = { r = 0.40, g = 0.78, b = 0.83 },
+				icon = "__diesel_engine__/graphics/oxygen.png",
+				icon_size = 64,
+				order = "a[fluid]-d[oxygen]",
+				pressure_to_speed_ratio = 0.4,
+				flow_to_energy_ratio = 0.59,
+				auto_barrel = true,
+			},
+		})
+	end
+	-------------------------------------------------------------------------------
 	local has_space_variant = false
 	local check_types = { "assembling-machine", "inserter", "furnace", "mining-drill" }
+
 	for _, prototype_type in ipairs(check_types) do
 		if data.raw[prototype_type] then
 			for _, entity in pairs(data.raw[prototype_type]) do
@@ -217,7 +245,7 @@ if mods["space-age"] then
 								},
 								ingredients = {
 									{ type = "fluid", name = name, amount = 100 },
-									{ type = "fluid", name = "oxygen", amount = 100 },
+									{ type = "fluid", name = oxygen_name, amount = 100 },
 								},
 								results = {
 									{
@@ -239,35 +267,16 @@ if mods["space-age"] then
 				end
 			end
 		end
-		--redefine oxygen to override other icons because it looks cool
-		if settings.startup["override-oxygen-with-diesel-engine-icon"].value then
-			data:extend({
-				{
-					type = "fluid",
-					name = "oxygen",
-					subgroup = "fluid",
-					default_temperature = 25,
-					base_color = { r = 0.28, g = 0.68, b = 0.73 },
-					flow_color = { r = 0.40, g = 0.78, b = 0.83 },
-					icon = "__diesel_engine__/graphics/oxygen.png",
-					icon_size = 64,
-					order = "a[fluid]-d[oxygen]",
-					pressure_to_speed_ratio = 0.4,
-					flow_to_energy_ratio = 0.59,
-					auto_barrel = true,
-				},
-			})
-		end
 	else
+		-- hide / disable stuff if it's unused
 		if data.raw.recipe["inefficient-electrolysis"] then
 			data.raw.recipe["inefficient-electrolysis"].hidden = true
 			data.raw.recipe["inefficient-electrolysis"].enabled = false
+		else
 		end
-
 		if data.raw.fluid["space-diesel-fuel"] then
 			data.raw.fluid["space-diesel-fuel"].hidden = true
 		end
-
 		if data.raw.technology["space-diesel"] then
 			data.raw.technology["space-diesel"].hidden = true
 			data.raw.technology["space-diesel"].enabled = false
