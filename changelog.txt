@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.11.0
+Date: 2026-07-04
+  Changelog:
+    - added Krastorio2 as optional dependency
+    - added kr-biomethanol and biomethanol as valid diesel fuels. 
+      I copied values from Krastorio 2 so only difference you should notice is
+      fact that it can now be used in flamethrower
+    - only fluids on internal list are affected by barreling diesel fuel code to
+      prevent issues where fluid could have drasticly unbalanced value and
+      still be used as fuel
+
+  Info:
+    - reorganized code internally
+    - added documentation on github and mod site
+---------------------------------------------------------------------------------------------------
 Version: 0.10.1
 Date: 2026-07-04
   Bugfixes:
