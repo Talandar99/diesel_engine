@@ -1,4 +1,4 @@
-## What exactly does this library do?
+## Diesel Engine
 This is library for managing fluid with fuel value for my mods
 Here is exactly what happens under the hood, broken down into its core
 features:
