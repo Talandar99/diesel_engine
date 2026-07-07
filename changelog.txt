@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.11.0
-Date: 2026-07-04
+Date: 2026-07-07
   Changelog:
     - added Krastorio2 as optional dependency
     - added kr-biomethanol and biomethanol as valid diesel fuels. 
