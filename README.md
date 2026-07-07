@@ -57,7 +57,7 @@ data:extend({
         type = "assembling-machine",
         name = "my-custom-awesome-diesel-assembling-machine",
         -- ... rest of the standard machine parameters
-        make_space_diesel_variant = true, -- <--- ADD THIS LINE !!!
+        make_space_diesel_variant = true, -- <<< ADD THIS LINE <<<
         energy_source = {
             type = "fluid",
             fluid_box = {
