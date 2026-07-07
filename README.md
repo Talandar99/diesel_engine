@@ -1,9 +1,8 @@
-## Diesel Engine
+# Diesel Engine
 This is library for managing fluid with fuel value for my mods
-Here is exactly what happens under the hood, broken down into its core
-features:
+Here is what it does:
 
-### Central Fluid Database
+### Central Fluid Configuration
 - Everything relies on a single configuration file (`fluid-properties.lua`). 
 - This is where fuel values (e.g., `1.2MJ`) and emission multipliers for various fluids (both vanilla and from mods like Pelagos,
 Krastorio 2, or Foliax) are placed.
