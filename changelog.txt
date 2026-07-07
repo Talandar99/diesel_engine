@@ -9,7 +9,6 @@ Date: 2026-07-04
     - only fluids on internal list are affected by barreling diesel fuel code to
       prevent issues where fluid could have drasticly unbalanced value and
       still be used as fuel
-
   Info:
     - reorganized code internally
     - added documentation on github and mod site
