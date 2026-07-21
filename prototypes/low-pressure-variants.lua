@@ -11,13 +11,15 @@ for entity_type, entities in pairs(data.raw) do
 end
 
 local function make_space_fluid_variant(entity)
-	local new_name = entity.name .. "-space-variant"
+	local new_name = entity.name .. "-low-pressure-variant"
+
 	local space_entity = table.deepcopy(entity)
+
 	space_entity.name = new_name
 	space_entity.placeable_by = { item = entity.name, count = 1 }
 
 	space_entity.localised_name = {
-		"entity-name.space-diesel-variant",
+		"entity-name.low-pressure-diesel-variant",
 		entity.localised_name or { "entity-name." .. entity.name },
 	}
 
@@ -30,7 +32,22 @@ local function make_space_fluid_variant(entity)
 			space_entity.energy_source.fluid_box.filter = "space-diesel-fuel"
 		end
 	end
+
+	-- hide space entity
 	space_entity.hidden_in_factoriopedia = true
+	space_entity.hidden = true
+
+	entity.created_effect = {
+		type = "direct",
+		action_delivery = {
+			type = "instant",
+			source_effects = {
+				type = "script",
+				effect_id = "diesel-engine-check-low-pressure-variant",
+			},
+		},
+	}
+
 	data:extend({ space_entity })
 end
 

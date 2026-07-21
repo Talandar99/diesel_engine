@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.12.0
+Date: 2026-07-07
+  Changelog:
+    - renamed locale. "space variant" is now "low pressure" variant
+    - **low pressure** variant of regualar diesel machine is now required on any surface with pressure 
+      lower than 100 hPa not just in space. That should result in diesel machines working in more 
+      natural way with moon-like planets like Cerys or Muluna which don't have oxygen
+---------------------------------------------------------------------------------------------------
 Version: 0.11.0
 Date: 2026-07-07
   Changelog:

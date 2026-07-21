@@ -9,17 +9,18 @@ local function check_and_replace_entity(entity)
 
 	local surface = entity.surface
 	local pressure = surface.get_property("pressure")
+	--debug log
 	--log(pressure)
-
-	if pressure ~= 0 then
-		--	log("pressure not 0")
+	if pressure > 100 then
+		--debug log
+		--log("pressure not 100")
 		return
 	end
-
-	--log("pressure equal 0")
+	--debug log
+	--log("pressure equal 100")
 
 	local current_name = entity.name
-	local space_variant_name = current_name .. "-space-variant"
+	local space_variant_name = current_name .. "-low-pressure-variant"
 
 	if not prototypes.entity[space_variant_name] then
 		return
@@ -46,27 +47,9 @@ local function check_and_replace_entity(entity)
 	end
 end
 -------------------------------------------------------------------------------
-script.on_event(defines.events.on_built_entity, function(event)
-	local e = event.created_entity or event.entity
-	if not e then
-		return
+script.on_event(defines.events.on_script_trigger_effect, function(event)
+	if event.effect_id == "diesel-engine-check-low-pressure-variant" then
+		check_and_replace_entity(event.target_entity)
 	end
-
-	check_and_replace_entity(event.entity)
-end)
-
-script.on_event(defines.events.on_robot_built_entity, function(event)
-	local e = event.created_entity or event.entity
-	if not e then
-		return
-	end
-	check_and_replace_entity(event.entity)
-end)
-script.on_event(defines.events.on_space_platform_built_entity, function(event)
-	local e = event.entity
-	if not (e and e.valid) then
-		return
-	end
-	check_and_replace_entity(event.entity)
 end)
 -------------------------------------------------------------------------------

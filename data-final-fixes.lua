@@ -1,5 +1,5 @@
 if mods["space-age"] then
-	require("prototypes.space-variants")
+	require("prototypes.low-pressure-variants")
 end
 
 local fluid_properties = require("prototypes.fluid-properties")
