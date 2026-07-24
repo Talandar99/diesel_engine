@@ -20,7 +20,7 @@ return {
 	["puff-gas"] = { fuel_value = "0.7MJ", emissions_multiplier = 0.8 },
 
 	-- Maraxis, Vesta
-	["hydrogen"] = { fuel_value = "0.4MJ", emissions_multiplier = 0.8 },
+	--["hydrogen"] = { fuel_value = "0.4MJ", emissions_multiplier = 0.8 },
 
 	-- Depths of Nauvis
 	["uranium-sludge"] = { fuel_value = "0.15MJ", emissions_multiplier = 2.5 },
@@ -35,7 +35,7 @@ return {
 	["rocket-fuel"] = { fuel_value = "1.3MJ", emissions_multiplier = 1.5 },
 
 	-- apia-carnova
-	["glycerin"] = { fuel_value = "0.25MJ", emissions_multiplier = 1.2 },
+	--["glycerin"] = { fuel_value = "0.25MJ", emissions_multiplier = 1.2 },
 
 	-- ferros + hydraulic machines
 	["lubricant"] = { fuel_value = "0.10MJ", emissions_multiplier = 1.0 },
@@ -47,9 +47,9 @@ return {
 	["organic-sludge"] = { fuel_value = "0.25MJ", emissions_multiplier = 3.0 },
 
 	-- foliax
-	["energy-fluid"] = { fuel_value = "0.75MJ", emissions_multiplier = 0.8 },
+	--["energy-fluid"] = { fuel_value = "0.75MJ", emissions_multiplier = 0.8 },
 	["brimfruit-paste"] = { fuel_value = "0.6MJ", emissions_multiplier = 1.8 },
-	["foliax-research-catalyst"] = { fuel_value = "0.25MJ", emissions_multiplier = 2.0 },
+	--["foliax-research-catalyst"] = { fuel_value = "0.25MJ", emissions_multiplier = 2.0 },
 
 	-- Krastorio 2
 	["kr-biomethanol"] = { fuel_value = "0.75MJ", emissions_multiplier = 0.8 },

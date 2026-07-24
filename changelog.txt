@@ -1,11 +1,20 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.12.0
+Version: 1.0.0
 Date: 2026-07-07
   Changelog:
-    - renamed locale. "space variant" is now "low pressure" variant
-    - **low pressure** variant of regualar diesel machine is now required on any surface with pressure 
+    - reworked how lib works internally, by adding multi fluid filter. 
+      Diesel powered entities powered via pipe will now 
+      **only use fuels selected by internal list instead of every fluid with fuel value**. 
+      Which should fix cases like water being able to power diesel engines for some reason.
+    - added `draw_background = true` to all icons in diesel fuel recipes which make them look a bit better
+  Balancing:
+    - space diesel fuel is now required on any surface with pressure 
       lower than 100 hPa not just in space. That should result in diesel machines working in more 
       natural way with moon-like planets like Cerys or Muluna which don't have oxygen
+    - hydrogen is no longer valid diesel fuel
+    - glycerin is no longer valid diesel fuel
+    - energy-fluid is no longer valid diesel fuel
+    - foliax-research-catalyst is no longer valid diesel fuel
 ---------------------------------------------------------------------------------------------------
 Version: 0.11.0
 Date: 2026-07-07

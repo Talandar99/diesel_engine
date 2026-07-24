@@ -7,7 +7,7 @@ return function(fluid_properties)
 		end
 		data.raw.recipe["inefficient-electrolysis"].results = { { type = "fluid", name = oxygen_name, amount = 20 } }
 		-------------------------------------------------------------------------------
-		--redefine oxygen to override other icons because it looks cool
+		--redefine oxygen to override other icons because I think it looks cool
 		if settings.startup["override-oxygen-with-diesel-engine-icon"].value then
 			data:extend({
 				{
@@ -33,7 +33,7 @@ return function(fluid_properties)
 		for _, prototype_type in ipairs(check_types) do
 			if data.raw[prototype_type] then
 				for _, entity in pairs(data.raw[prototype_type]) do
-					if entity.make_space_diesel_variant then
+					if entity.diesel_fuel_fluid_filter then
 						has_space_variant = true
 						break
 					end
@@ -69,12 +69,14 @@ return function(fluid_properties)
 										{
 											icon = data.raw.fluid["space-diesel-fuel"].icon,
 											icon_size = data.raw.fluid["space-diesel-fuel"].icon_size or 64,
+											draw_background = true,
 										},
 										{
 											icon = data.raw.fluid[name].icon,
 											icon_size = data.raw.fluid[name].icon_size or 64,
 											scale = 0.25,
 											shift = { 8, 8 },
+											draw_background = true,
 										},
 									},
 									ingredients = {
