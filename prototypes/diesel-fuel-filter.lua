@@ -9,9 +9,11 @@ return function(fluid_properties)
 	for fluid_name, _ in pairs(fluid_properties) do
 		if data.raw.fluid[fluid_name] then
 			local surf_conditions = nil
-			if fluid_name ~= "space-diesel-fuel" then
+
+			if mods["space-age"] and fluid_name ~= "space-diesel-fuel" then
 				surf_conditions = { { property = "pressure", min = 100 } }
 			end
+
 			table.insert(extensions, {
 				type = "recipe",
 				name = "diesel-fuel-fluid-filter-" .. fluid_name,
