@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
-Date: 2026-07-07
+Date: 2026-07-26
   Changelog:
+    - THIS VERSION OF THE MOD CONTAIN CHANGES THAT WILL BREAK EXISTING
+      FACTORIES. 
     - reworked how lib works internally, by adding multi fluid filter. Diesel
       powered entities powered via pipe will now only use fuels selected by
       internal list instead of every fluid with fuel value. Which should fix
