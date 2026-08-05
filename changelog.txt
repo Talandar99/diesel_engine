@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2026-08-06
+  Bugfixes:
+    - diesel engine unit and stel gear wheel recipes are no longer enabled from the start of the game
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2026-07-26
   Changelog:

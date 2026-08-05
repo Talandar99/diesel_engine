@@ -5,6 +5,7 @@ data:extend({
 		categories = { "advanced-crafting" },
 		ingredients = { { type = "item", name = "steel-plate", amount = 2 } },
 		results = { { type = "item", name = "steel-gear-wheel", amount = 1 } },
+		enabled = false,
 		allow_productivity = true,
 	},
 	{
@@ -12,6 +13,7 @@ data:extend({
 		name = "diesel-engine-unit",
 		categories = { "advanced-crafting" },
 		energy_required = 15,
+		enabled = false,
 		ingredients = {
 			{ type = "item", name = "engine-unit", amount = 1 },
 			{ type = "item", name = "steel-plate", amount = 1 },
