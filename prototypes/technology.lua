@@ -6,7 +6,6 @@ data:extend({
 		icon = "__diesel_engine__/graphics/diesel-engine-unit-tech.png",
 		icon_size = 256,
 		effects = {
-			{ type = "unlock-recipe", recipe = "steel-gear-wheel" },
 			{ type = "unlock-recipe", recipe = "diesel-engine-unit" },
 		},
 		prerequisites = {

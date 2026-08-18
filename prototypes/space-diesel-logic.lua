@@ -67,12 +67,17 @@ return function(fluid_properties)
 									},
 									icons = {
 										{
-											icon = data.raw.fluid["space-diesel-fuel"].icon,
+											icon = data.raw.fluid["space-diesel-fuel"].icon
+												or (
+													data.raw.fluid["space-diesel-fuel"].icons
+													and data.raw.fluid["space-diesel-fuel"].icons[1].icon
+												),
 											icon_size = data.raw.fluid["space-diesel-fuel"].icon_size or 64,
 											draw_background = true,
 										},
 										{
-											icon = data.raw.fluid[name].icon,
+											icon = data.raw.fluid[name].icon
+												or (data.raw.fluid[name].icons and data.raw.fluid[name].icons[1].icon),
 											icon_size = data.raw.fluid[name].icon_size or 64,
 											scale = 0.25,
 											shift = { 8, 8 },

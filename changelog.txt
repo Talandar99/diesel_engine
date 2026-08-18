@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2026-08-18
+  Changes:
+    - Steel gear wheel and diesel engine recipe and tech is now always visible
+    - Steel gear wheel is now unlocked at steel processing tech not with diesel engine tech 
+  Bugfixes:
+    - Fixed crash with Angels mods
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2026-08-06
   Bugfixes:
