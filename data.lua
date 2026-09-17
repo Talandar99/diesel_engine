@@ -45,6 +45,7 @@ if mods["space-age"] then
 			pressure_to_speed_ratio = 0.4,
 			flow_to_energy_ratio = 0.59,
 			auto_barrel = true,
+			auto_wooden_barrel = true,
 		},
 	})
 

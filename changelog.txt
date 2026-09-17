@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2026-09-18
+  Changes:
+    - added custom pipe covers
+    - wooden barrels from barreling machines mod can now be filled with space diesel fuel
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 2026-08-26
   Bugfixes:

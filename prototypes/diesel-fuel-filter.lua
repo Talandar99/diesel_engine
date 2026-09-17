@@ -30,13 +30,40 @@ return function(fluid_properties)
 	end
 
 	data:extend(extensions)
+
+	local empty_sprite = {
+		filename = "__core__/graphics/empty.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+	}
+
+	local function custom_pipecovers()
+		return {
+			north = { layers = { empty_sprite } },
+			east = { layers = { empty_sprite } },
+			west = { layers = { empty_sprite } },
+			south = {
+				layers = {
+					{
+						filename = "__diesel_engine__/graphics/diesel_pipe_cover_S.png",
+						priority = "extra-high",
+						width = 192,
+						height = 192,
+						scale = 0.5,
+						shift = util.by_pixel(0, -32),
+					},
+				},
+			},
+		}
+	end
+
 	local function apply_fluid_filter_mechanic(entity)
 		if not (entity.energy_source and entity.energy_source.type == "fluid" and entity.energy_source.fluid_box) then
 			return
 		end
 		local original_pipes = table.deepcopy(entity.energy_source.fluid_box.pipe_connections)
 		local original_pipe_pictures = table.deepcopy(entity.energy_source.fluid_box.pipe_picture)
-		local original_covers = table.deepcopy(entity.energy_source.fluid_box.pipe_covers)
 		local existing_filter = table.deepcopy(entity.energy_source.fluid_box.filter)
 		local existing_filters = table.deepcopy(entity.energy_source.fluid_box.filters)
 
@@ -82,7 +109,7 @@ return function(fluid_properties)
 			fluid_boxes = {
 				{
 					production_type = "input",
-					pipe_covers = original_covers,
+					pipe_covers = custom_pipecovers(),
 					volume = 100,
 					pipe_connections = original_pipes,
 					pipe_picture = original_pipe_pictures,
