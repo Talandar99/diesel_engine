@@ -21,7 +21,7 @@ return function(fluid_properties)
 
 						if barrel then
 							barrel.fuel_value = tostring(number_part * BARREL_CAPACITY) .. unit
-							barrel.fuel_category = "diesel-fuel"
+							barrel.fuel_categories = { "diesel-fuel" }
 							barrel.burnt_result = spec.burnt
 
 							local acceleration = number_part
