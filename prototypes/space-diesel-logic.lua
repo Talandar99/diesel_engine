@@ -7,24 +7,34 @@ return function(fluid_properties)
 		end
 		data.raw.recipe["inefficient-electrolysis"].results = { { type = "fluid", name = oxygen_name, amount = 20 } }
 		-------------------------------------------------------------------------------
-		--redefine oxygen to override other icons because I think it looks cool
+		--override the oxygen icon because I think it looks cool
+		--an oxygen fluid from another mod keeps its other fields (Krastorio 2 sets max_temperature = 100)
 		if settings.startup["override-oxygen-with-diesel-engine-icon"].value then
-			data:extend({
-				{
-					type = "fluid",
-					name = oxygen_name,
-					subgroup = "fluid",
-					default_temperature = 25,
-					base_color = { r = 0.28, g = 0.68, b = 0.73 },
-					flow_color = { r = 0.40, g = 0.78, b = 0.83 },
-					icon = "__diesel_engine__/graphics/oxygen.png",
-					icon_size = 64,
-					order = "a[fluid]-d[oxygen]",
-					pressure_to_speed_ratio = 0.4,
-					flow_to_energy_ratio = 0.59,
-					auto_barrel = true,
-				},
-			})
+			local oxygen = data.raw.fluid[oxygen_name]
+			if oxygen then
+				oxygen.icon = "__diesel_engine__/graphics/oxygen.png"
+				oxygen.icon_size = 64
+				oxygen.icons = nil
+				oxygen.base_color = { r = 0.28, g = 0.68, b = 0.73 }
+				oxygen.flow_color = { r = 0.40, g = 0.78, b = 0.83 }
+			else
+				data:extend({
+					{
+						type = "fluid",
+						name = oxygen_name,
+						subgroup = "fluid",
+						default_temperature = 25,
+						base_color = { r = 0.28, g = 0.68, b = 0.73 },
+						flow_color = { r = 0.40, g = 0.78, b = 0.83 },
+						icon = "__diesel_engine__/graphics/oxygen.png",
+						icon_size = 64,
+						order = "a[fluid]-d[oxygen]",
+						pressure_to_speed_ratio = 0.4,
+						flow_to_energy_ratio = 0.59,
+						auto_barrel = true,
+					},
+				})
+			end
 		end
 		-------------------------------------------------------------------------------
 		local has_space_variant = false
